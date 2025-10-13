@@ -1,6 +1,6 @@
-CREATE DATABASE NameBrands;
+CREATE DATABASE StoreBrands;
 
-USE NameBrands;
+USE StoreBrands;
 
 CREATE TABLE Product( 
 productID int PRIMARY KEY AUTO_INCREMENT,

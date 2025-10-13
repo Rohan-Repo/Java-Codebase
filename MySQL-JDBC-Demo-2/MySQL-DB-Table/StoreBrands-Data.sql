@@ -1,4 +1,4 @@
-USE NameBrands;
+USE StoreBrands;
 
 INSERT INTO Stores( address ) VALUES ( 'Winnipeg' );
 INSERT INTO Stores( address ) VALUES ( 'London' );

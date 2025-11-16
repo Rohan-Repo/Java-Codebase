@@ -141,6 +141,23 @@ public class StreamAPIEg3 {
                 .orElseThrow();
 
         System.out.println("\t maxValFromTransactions = " + maxValFromTransactions);
+
+        // Group Transactions by transactionType
+        Map<String, Double> transactionAvgByType = transactions
+                .stream()
+                .collect(
+                        Collectors.groupingBy(
+                                TransactionRecord::transactionType,
+                                Collectors.averagingDouble( TransactionRecord::transactionAmt )
+                        )
+                );
+
+        System.out.println( "\n Get Average of Transactions Grouped by Transaction Type:" );
+        transactionAvgByType.forEach((type, amt) ->
+                System.out.println( "\t" + type + " : " + amt )
+        );
+
+
     }
 
     public static List<EmployeeRecord> createEmpList() {
